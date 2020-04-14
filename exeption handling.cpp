@@ -1,27 +1,25 @@
-#include <iostream>
-
+include <iostream>
 using namespace std;
 
-int main()
-{
-   while(1)
-   {
-        int a,b;
-    try{
-     cout<<"Enter two integer number: ";
-    cin>>a>>b;
+class Employee {
+  private:
+    // Private attribute
+    int salary;
 
-    if(b==0)
-    {
-        throw 1;
+  public:
+    // Setter
+    void setSalary(int s) {
+      salary = s;
     }
-    double c=(double)a/b;
-    cout<<"result: "<<c<<endl;
+    // Getter
+    int getSalary() {
+      return salary;
     }
-   catch(int x)
-   {
-       cout<<"divided by zero not possible"<<endl;
-       cout<<"please try again"<<endl;
-   }
-   }
+};
+
+int main() {
+  Employee myObj;
+  myObj.setSalary(50000);
+  cout << myObj.getSalary();
+  return 0;
 }
