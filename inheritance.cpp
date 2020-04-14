@@ -1,36 +1,31 @@
-#include <iostream>
-
+#include<iostream>
 using namespace std;
+//Base class
+class Vehicle{
 
-class person
-{
-public:
+    public:
+        string brand = "Ford";
 
-    string name;
-    int age;
-    void display1()
-    {
-        cout<<"Name is:"<<name<<"   age is: "<<age<<endl;
-    }
+        void honk(){
+
+        cout<<" tuut, tuut! \n";
+        }
+};
+//Child class
+
+class Car:public Vehicle{
+    public:
+        string model= "Mustang";
+
 };
 
-class student:public person  //inherite
-{
-public:
-    int id;
+int main(){
 
-    void display2()
-    {
-        cout<<"id is:"<<id<<endl;
-        display1();
-    }
-};
+Car myCar;
+myCar.honk();
 
-int main()
-{
-    student a;
-    a.name="rifat";
-    a.age= 23;
-    a.id=5686;
-    a.display2();
+cout<< myCar.brand + " " + myCar.model;
+
+return 0;
+
 }
